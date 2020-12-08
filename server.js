@@ -17,8 +17,11 @@ app.use(express.static("public"));
 
 
 mongoose.connect(
-  'mongodb+srv://Vlad:columbia20mongo@cluster0.xm9q3.mongodb.net/budget?retryWrites=true&w=majority',
-  {useUnifiedTopology: true, useNewUrlParser: true},
+  'mongodb+srv://Vlad:columbia20mongo@cluster0.xm9q3.mongodb.net/workout?retryWrites=true&w=majority',
+  {useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false},
    (req, res) => {
   console.log('Connected to database!');
 })
