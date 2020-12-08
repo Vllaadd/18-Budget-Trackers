@@ -15,10 +15,6 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
 
 mongoose.connect(
   'mongodb+srv://Vlad:columbia20mongo@cluster0.xm9q3.mongodb.net/budget?retryWrites=true&w=majority',
@@ -31,5 +27,5 @@ mongoose.connect(
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`App running on http://localhost:${PORT}!`);
 });
