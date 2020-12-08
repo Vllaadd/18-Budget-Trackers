@@ -20,6 +20,13 @@ mongoose.connect("mongodb://localhost/budget", {
   useFindAndModify: false
 });
 
+mongoose.connect(
+  'mongodb+srv://Vlad:columbia20mongo@cluster0.xm9q3.mongodb.net/budget?retryWrites=true&w=majority',
+  {useUnifiedTopology: true, useNewUrlParser: true},
+   (req, res) => {
+  console.log('Connected to database!');
+})
+
 // routes
 app.use(require("./routes/api.js"));
 
